@@ -19,6 +19,12 @@ public class ModBlocks {
                     .hardnessAndResistance(3f, 10f)
                         .sound(SoundType.METAL)));
 
+    public static final RegistryObject<Block> COPPER_ORE = register("copper_ore",
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+                    .hardnessAndResistance(3f, 10f)
+                    .sound(SoundType.STONE)));
+
+
 
     public static void register() {}
 

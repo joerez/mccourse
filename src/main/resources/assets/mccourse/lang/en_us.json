@@ -1,4 +1,6 @@
 {
   "item.mccourse.copper_ingot": "Copper Ingot",
-  "block.mccourse.copper_block": "Copper Block"
+  "block.mccourse.copper_block": "Copper Block",
+  "item.mccourse.copper_wire": "Copper Wire",
+  "block.mccourse.copper_ore": "Copper Ore"
 }
