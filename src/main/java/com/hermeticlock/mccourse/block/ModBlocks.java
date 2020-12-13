@@ -1,5 +1,6 @@
-package com.hermeticlock.block;
+package com.hermeticlock.mccourse.block;
 
+import com.hermeticlock.mccourse.McCourseMod;
 import com.hermeticlock.mccourse.util.Registration;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -33,7 +34,7 @@ public class ModBlocks {
         RegistryObject<T> toReturn = Registration.BLOCKS.register(name, block);
 
         Registration.ITEMS.register(name, () -> new BlockItem(toReturn.get(),
-                new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)
+                new Item.Properties().group(McCourseMod.COURSE_TAB)
         ));
 
         return toReturn;
