@@ -4,5 +4,8 @@
   "item.mccourse.copper_wire": "Copper Wire",
   "block.mccourse.copper_ore": "Copper Ore",
   "item.mccourse.coppered_apple": "Coppered Apple",
+
+  "item.mccourse.copper_shovel": "Copper Shovel",
+
   "itemGroup.courseTab": "Course Tab"
 }
