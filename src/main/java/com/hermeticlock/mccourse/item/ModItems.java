@@ -2,10 +2,7 @@ package com.hermeticlock.mccourse.item;
 
 import com.hermeticlock.mccourse.McCourseMod;
 import com.hermeticlock.mccourse.util.Registration;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -37,6 +34,53 @@ public class ModItems {
                                 .group(McCourseMod.COURSE_TAB)
                     )
             );
+
+    public static final RegistryObject<Item> COPPER_SWORD =
+            Registration.ITEMS.register("copper_sword",
+                    () -> new ShovelItem(
+                            ModItemTier.COPPER, 2, 0f,
+                            new Item.Properties()
+                                    .defaultMaxDamage(150)
+                                    .group(McCourseMod.COURSE_TAB)
+                    )
+            );
+
+    public static final RegistryObject<Item> COPPER_PICKAXE =
+            Registration.ITEMS.register("copper_pickaxe",
+                    () -> new PickaxeItem(
+                            ModItemTier.COPPER, 0, 0f,
+                            new Item.Properties()
+                                    .defaultMaxDamage(150)
+                                    .addToolType(ToolType.PICKAXE, 2)
+                                    .group(McCourseMod.COURSE_TAB)
+                    )
+            );
+
+    public static final RegistryObject<Item> COPPER_HOE =
+            Registration.ITEMS.register("copper_hoe",
+                    () -> new HoeItem(
+                            ModItemTier.COPPER, 0, 0f,
+                            new Item.Properties()
+                                    .defaultMaxDamage(150)
+                                    .addToolType(ToolType.HOE, 2)
+                                    .group(McCourseMod.COURSE_TAB)
+                    )
+            );
+
+    public static final RegistryObject<Item> COPPER_AXE =
+            Registration.ITEMS.register("copper_axe",
+                    () -> new AxeItem(
+                            ModItemTier.COPPER, 2.5f, -3f,
+                            new Item.Properties()
+                                    .defaultMaxDamage(150)
+                                    .addToolType(ToolType.AXE, 2)
+                                    .group(McCourseMod.COURSE_TAB)
+                    )
+            );
+
+
+
+
 
 
     public static void register() { }
