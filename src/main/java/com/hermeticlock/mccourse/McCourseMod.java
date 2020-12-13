@@ -1,5 +1,7 @@
 package com.hermeticlock.mccourse;
 
+import com.hermeticlock.mccourse.item.ModItems;
+import com.hermeticlock.mccourse.util.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,13 +21,20 @@ import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("mccourse")
+@Mod(McCourseMod.MOD_ID)
 public class McCourseMod
 {
+
+    public static final String MOD_ID = "mccourse";
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public McCourseMod() {
+
+        Registration.register();
+        ModItems.register();
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
