@@ -1,5 +1,6 @@
 package com.hermeticlock.mccourse;
 
+import com.hermeticlock.block.ModBlocks;
 import com.hermeticlock.mccourse.item.ModItems;
 import com.hermeticlock.mccourse.util.Registration;
 import net.minecraft.block.Block;
@@ -34,6 +35,7 @@ public class McCourseMod
 
         Registration.register();
         ModItems.register();
+        ModBlocks.register();
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
