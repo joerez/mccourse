@@ -40,5 +40,10 @@ public class CopperedApple extends Item {
 
     }
 
+    @Override
+    public int getBurnTime(ItemStack itemStack) {
+        return 600;
+    }
+
 
 }
