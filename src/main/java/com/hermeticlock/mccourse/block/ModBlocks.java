@@ -2,9 +2,7 @@ package com.hermeticlock.mccourse.block;
 
 import com.hermeticlock.mccourse.McCourseMod;
 import com.hermeticlock.mccourse.util.Registration;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -25,6 +23,28 @@ public class ModBlocks {
             () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
                     .hardnessAndResistance(3f, 10f)
                     .sound(SoundType.STONE).harvestLevel(2).harvestTool(ToolType.PICKAXE)));
+
+
+
+    public static final RegistryObject<Block> COPPER_STAIRS =
+            register("copper_stairs", () -> new StairsBlock(() -> ModBlocks.COPPER_BLOCK.get().getDefaultState(),
+                    AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_FENCE =
+            register("copper_fence", () -> new FenceBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_FENCE_GATE =
+            register("copper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_BUTTON =
+            register("copper_button", () -> new StoneButtonBlock(AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_PRESSURE_PLATE =
+            register("copper_pressure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
+                    AbstractBlock.Properties.create(Material.IRON)));
+
+    public static final RegistryObject<Block> COPPER_SLAB =
+            register("copper_slab", () -> new SlabBlock(AbstractBlock.Properties.create(Material.IRON)));
 
 
 
