@@ -1,7 +1,10 @@
 package com.hermeticlock.mccourse.events;
 
 import com.hermeticlock.mccourse.item.ModItems;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.LightningBoltRenderer;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,9 +13,13 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
+
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Collection;
@@ -65,6 +72,19 @@ public class ModEvents {
             }
 
         }
+    }
+
+    @SubscribeEvent
+    public void onPowerWord(ServerChatEvent event) {
+        if (event.getMessage().contains("shazam")) {
+            PlayerEntity player = event.getPlayer();
+
+            player.addPotionEffect(new EffectInstance(Effects.JUMP_BOOST, 400, 10));
+
+            Minecraft.getInstance().player.jump();
+            player.world.createExplosion(player, player.getPosX(), player.getPosY(), player.getPosZ(), 10, true, Explosion.Mode.BREAK);
+        }
+
     }
 
 
