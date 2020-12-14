@@ -1,6 +1,7 @@
 package com.hermeticlock.mccourse.item;
 
 import com.hermeticlock.mccourse.McCourseMod;
+import com.hermeticlock.mccourse.util.Config;
 import com.hermeticlock.mccourse.util.KeyboardHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Food;
@@ -22,7 +23,7 @@ public class CopperedApple extends Item {
                         .hunger(5)
                         .saturation(1.5f)
                         .effect(() -> new EffectInstance(
-                                Effects.GLOWING, 300, 1
+                                Effects.GLOWING, Config.COPPERED_GLOW_DURATION.get(), 1
                         ), 0.5f).build()
                 )
         );

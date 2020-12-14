@@ -1,6 +1,7 @@
 package com.hermeticlock.mccourse.events;
 
 import com.hermeticlock.mccourse.item.ModItems;
+import com.hermeticlock.mccourse.util.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.LightningBoltRenderer;
 import net.minecraft.entity.LivingEntity;
@@ -39,7 +40,7 @@ public class ModEvents {
                     // delete one of the held items
                     player.getHeldItemMainhand().shrink(1);
 
-                    target.addPotionEffect(new EffectInstance(Effects.GLOWING, 600));
+                    target.addPotionEffect(new EffectInstance(Effects.GLOWING, Config.COPPERED_GLOW_DURATION.get()));
 
                     if (!player.world.isRemote()) {
                         String msg = TextFormatting.YELLOW + "Sheep is now glowing!";
