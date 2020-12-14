@@ -11,6 +11,12 @@
   "item.mccourse.copper_axe": "Copper Axe",
   "item.mccourse.copper_sword": "Copper Sword",
 
+  "item.mccourse.copper_helmet": "Copper Helmet",
+  "item.mccourse.copper_chestplate": "Copper Chestplate",
+  "item.mccourse.copper_leggings": "Copper Leggings",
+  "item.mccourse.copper_boots": "Copper Boots",
+
+
 
 
   "itemGroup.courseTab": "Course Tab"
